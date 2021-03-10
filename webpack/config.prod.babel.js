@@ -10,6 +10,7 @@ const htmlFileNames = fs.readdirSync('./src/html/');
 const getEntries = () => {
     const entries = [
         './src/js/app.js',
+        './src/scss/bootstrap.min.css',
         './src/scss/app.scss'
     ];
 
@@ -104,6 +105,6 @@ module.exports = {
         ],
     },
     resolve: {
-        extensions: ['.js', '.jpg', '.html', '.scss'],
+        extensions: ['.js', '.jpg', '.png', '.svg', '.html', '.scss'],
     }
 };

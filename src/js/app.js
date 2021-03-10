@@ -1,6 +1,6 @@
 import $ from 'jquery';
 
-import './module/cat';
+import './module/main';
 
 window.$ = $;
 window.jQuery = $;

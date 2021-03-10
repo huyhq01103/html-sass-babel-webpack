@@ -1,20 +1,30 @@
-@import "variables/media";
+// Sass utilities
+@import 'helpers/variables';
+@import 'helpers/breakpoints';
+@import 'helpers/mixins';
 
-@import "mixin/media";
-
-@import "util/grid";
-
-@import "lib/normalize";
-
-@import "modifier/margin";
-
-@import 'base/base';
-@import 'base/fonts';
-
-@import 'module/cat';
+// Vendors and external stylesheets
 
 
+// Base stuff
+@import 'base/normalize';
+@import 'base/typography';
 
-body {
-    background: url('../img/cat.jpg') 
-}
+// Layout related stylesheets
+@import 'layout/grid';
+@import 'layout/header';
+@import 'layout/footer';
+@import 'layout/sidebar';
+@import 'layout/tabs';
+
+// Components and modules
+@import 'components/buttons';
+@import 'components/dropdown';
+@import 'components/navigation';
+@import 'components/forms';
+
+// Page-specific stylesheets
+@import 'pages/home';
+@import 'pages/service';
+@import 'pages/contact';
+@import 'pages/terminal';

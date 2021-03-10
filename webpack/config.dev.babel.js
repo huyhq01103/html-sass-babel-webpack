@@ -10,6 +10,7 @@ const htmlFileNames = fs.readdirSync('./src/html/');
 const getEntries = () => {
     const entries = [
         './src/js/app.js',
+        './src/scss/bootstrap.min.css',
         './src/scss/app.scss'
     ];
 
@@ -25,6 +26,10 @@ const getPlugins = () => {
         new webpack.HotModuleReplacementPlugin(),
         new FriendlyErrorsWebpackPlugin({
             clearConsole: true,
+        }),
+        new webpack.ProvidePlugin({
+            $: "jquery",
+            jQuery: "jquery"
         })
     ];
     htmlFileNames.forEach(filename => {
@@ -57,7 +62,7 @@ module.exports = {
         historyApiFallback: true,
         before: function (app) {
             app.use('/assets', express.static('./src/assets'));
-            app.use('/img', express.static('./src/assets/img'));
+            app.use('/images', express.static('./src/assets/images'));
         }
     },
     plugins: getPlugins(),
@@ -118,6 +123,6 @@ module.exports = {
         ],
     },
     resolve: {
-        extensions: ['.js', '.jpg', '.html', '.scss'],
+        extensions: ['.js', '.jpg', '.png', '.svg', '.html', '.scss'],
     },
 };
